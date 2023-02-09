@@ -1,11 +1,10 @@
-//import java.util.Stack;
-
 import java.util.Map;
+import java.util.Stack;
 
-public class CalcCommands {
-    private FloatStack numbersStack;
+public class StackCalculator {
+    Stack<Float> numbersStack;
 
-    public void a() {
+    public final void a() {
         System.out.println("7334");
     }
 
