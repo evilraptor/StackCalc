@@ -13,7 +13,7 @@ public class FloatStack {
     }
 
     float pop() {
-
+        previous.topFlag = true;
         return 0;
     }
 

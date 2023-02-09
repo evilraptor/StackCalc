@@ -1,9 +1,6 @@
 //import java.util.Stack;
 
 public class CalcCommands {
-    //static int defaultNumberStackSize = 10;
-    //private int[] numbersStack = new int[defaultNumberStackSize];
-
     private FloatStack numbersStack;
 
     public void a() {
@@ -14,8 +11,9 @@ public class CalcCommands {
         numbersStack.push(inputNumber);
     }
 
-    public void POP(float inputNumber) {
-        numbersStack.pop();
+    public float POP(float inputNumber) {
+        float outputNumber = numbersStack.pop();
+        return outputNumber;
     }
 
     public float PRINT() {
