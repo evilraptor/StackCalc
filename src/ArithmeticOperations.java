@@ -1,47 +1,44 @@
 import java.util.Stack;
 
 public class ArithmeticOperations {
-    void realization(String operator, Stack<Float> numbersStack) {
-        if (operator == "+") ADD(numbersStack);
-        if (operator == "-") SUB(numbersStack);
-        if (operator == "*") MUL(numbersStack);
-        if (operator == "/") DIV(numbersStack);
-        if (operator == "SQRT") SQRT(numbersStack);
-    }
-
-    void ADD(Stack<Float> numbersStack) {
+    void ADD(ListForCalculatorOperation listForCalculatorOperation) {//Stack<Float> numbersStack
+        Stack<Float> numbersStack = listForCalculatorOperation.getStack();
         Float firstElement = numbersStack.pop();
         Float secondElement = numbersStack.pop();
         Float result = firstElement + secondElement;
         numbersStack.push(result);
     }
 
-    void SUB(Stack<Float> numbersStack) {
+    void SUB(ListForCalculatorOperation listForCalculatorOperation) {//Stack<Float> numbersStack
+        Stack<Float> numbersStack = listForCalculatorOperation.getStack();
         Float firstElement = numbersStack.pop();
         Float secondElement = numbersStack.pop();
         Float result = firstElement - secondElement;
         numbersStack.push(result);
     }
 
-    void MUL(Stack<Float> numbersStack) {
+    void MUL(ListForCalculatorOperation listForCalculatorOperation) {
+        Stack<Float> numbersStack = listForCalculatorOperation.getStack();
         Float firstElement = numbersStack.pop();
         Float secondElement = numbersStack.pop();
         Float result = firstElement * secondElement;
         numbersStack.push(result);
     }
 
-    void DIV(Stack<Float> numbersStack) {
+    void DIV(ListForCalculatorOperation listForCalculatorOperation) {
+        Stack<Float> numbersStack = listForCalculatorOperation.getStack();
         Float firstElement = numbersStack.pop();
         Float secondElement = numbersStack.pop();
         Float result = firstElement / secondElement;
         numbersStack.push(result);
     }
 
-    void SQRT(Stack<Float> numbersStack) {
+    void SQRT(ListForCalculatorOperation listForCalculatorOperation) {
+        Stack<Float> numbersStack = listForCalculatorOperation.getStack();
         Float firstElement = numbersStack.pop();
-        Double tmp = firstElement.doubleValue();
+        double tmp = firstElement.doubleValue();
         tmp = Math.sqrt(tmp);
-        Float result = tmp.floatValue();
+        Float result = (float) tmp;
         numbersStack.push(result);
     }
 }

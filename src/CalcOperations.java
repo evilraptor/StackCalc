@@ -1,7 +1,5 @@
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Stack;
-import java.util.Vector;
 
 public class CalcOperations {
     public static boolean isNumeric(String str) {
@@ -13,15 +11,25 @@ public class CalcOperations {
         }
     }
 
-    public void DEFINE(Stack<Float> numbersStack, HashMap<String, Float> parameters, String input) {
-        //System.out.println("AAAAAAAAAAAAAAAA");
+    //ListForCalculatorOperation listForCalculatorOperation
+    //Stack<Float> numbersStack, HashMap<String, Float> parameters, String input
+    public void DEFINE(ListForCalculatorOperation listForCalculatorOperation) {
+        Stack<Float> numbersStack = listForCalculatorOperation.getStack();
+        HashMap<String, Float> parameters = listForCalculatorOperation.getParameters();
+        String input = listForCalculatorOperation.getText();
+
         String[] inputArray = input.split(" ");
         String inputParameter = inputArray[1];
         Float value = Float.valueOf(inputArray[2]);
         parameters.put(inputParameter, value);
     }
 
-    public void PUSH(Stack<Float> numbersStack, HashMap<String, Float> parameters, String input) {
+    //Stack<Float> numbersStack, HashMap<String, Float> parameters, String input
+    public void PUSH(ListForCalculatorOperation listForCalculatorOperation) {
+        Stack<Float> numbersStack = listForCalculatorOperation.getStack();
+        HashMap<String, Float> parameters = listForCalculatorOperation.getParameters();
+        String input = listForCalculatorOperation.getText();
+
         String[] inputArray = input.split(" ");
         Float tmp;
         if (!isNumeric(inputArray[1])) {
@@ -34,15 +42,29 @@ public class CalcOperations {
         numbersStack.push(tmp);
     }
 
-    public float POP(Stack<Float> numbersStack, HashMap<String, Float> parameters) {
-        float outputNumber = numbersStack.pop();
-        return outputNumber;
+    //Stack<Float> numbersStack, HashMap<String, Float> parameters
+    public void POP(ListForCalculatorOperation listForCalculatorOperation) {
+        Stack<Float> numbersStack = listForCalculatorOperation.getStack();
+        HashMap<String, Float> parameters = listForCalculatorOperation.getParameters();
+
+        float outputNumber;
+        System.out.println("POP result: ");
+        if (!numbersStack.isEmpty()) {
+            outputNumber = numbersStack.pop();
+            System.out.print(outputNumber);
+            System.out.println();
+        } else System.out.print("Stack is empty...\n");
     }
 
-    public int PRINT(Stack<Float> numbersStack, HashMap<String, Float> parameters) {
-        //float outputNumber = numbersStack.peek();
-        if (!numbersStack.isEmpty()) System.out.println(numbersStack.peek());
-        else System.out.println("nothing...");
-        return 0;
+    //Stack<Float> numbersStack, HashMap<String, Float> parameters
+    public void PRINT(ListForCalculatorOperation listForCalculatorOperation) {
+        Stack<Float> numbersStack = listForCalculatorOperation.getStack();
+        HashMap<String, Float> parameters = listForCalculatorOperation.getParameters();
+
+        System.out.println("PRINT result: ");
+        if (!numbersStack.isEmpty()) {
+            System.out.print(numbersStack.peek());
+            System.out.println();
+        } else System.out.print("Stack is empty...\n");
     }
 }

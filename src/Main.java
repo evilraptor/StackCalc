@@ -1,23 +1,22 @@
 import java.util.Scanner;
-import java.util.Stack;
 
 public final class Main {
     public static void main(String[] args) {
         //System.out.println("Hello world! Its me MARIO");
-        StackCalculator calcStack = new StackCalculator();
-        Scanner reader = new Scanner(System.in);
-        String input = reader.toString();
+        StackCalculator stackCalculator = new StackCalculator();
 
-        reader.close();
-        /*calcStack.doCalculation("DEFINE a 4");
-        calcStack.doCalculation("PUSH a");
-        calcStack.doCalculation("SQRT");
-        //calcStack.doCalculation("PUSH 5");
-        //calcStack.doCalculation("+");
-        calcStack.doCalculation("PRINT");
-        //calcStack.DEFINE("a", 5);
-        //calcStack.PUSH("a");
-        //calcStack.PUSH("2");
-        //calcStack.PRINT();*/
+        Scanner in = new Scanner(System.in);
+        //System.out.print("Say Something to World: ");
+        String input = "1";
+        int counter = 0;
+        while (!input.equals("EXIT")) {
+            System.out.print(counter + ":   ");
+            input = in.nextLine();
+            stackCalculator.doCalculation(input);
+            counter++;
+            //System.out.println();
+        }
+        //System.out.printf("Your number: %s \n", num);
+        in.close();
     }
 }
