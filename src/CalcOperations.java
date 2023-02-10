@@ -1,9 +1,9 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
+import java.util.Vector;
 
 public class CalcOperations {
-
     public static boolean isNumeric(String str) {
         try {
             Float.parseFloat(str);
@@ -13,32 +13,33 @@ public class CalcOperations {
         }
     }
 
-    public void DEFINE(Stack<Float> numbersStack, Map<String, Float> parameters, String input) {
+    public void DEFINE(Stack<Float> numbersStack, HashMap<String, Float> parameters, String input) {
+        //System.out.println("AAAAAAAAAAAAAAAA");
         String[] inputArray = input.split(" ");
-        String inputParameter = inputArray[2];
-        Float value = Float.valueOf(inputArray[3]);
+        String inputParameter = inputArray[1];
+        Float value = Float.valueOf(inputArray[2]);
         parameters.put(inputParameter, value);
     }
 
-    public void PUSH(Stack<Float> numbersStack, Map<String, Float> parameters, String input) {
-        //System.out.println(input);
+    public void PUSH(Stack<Float> numbersStack, HashMap<String, Float> parameters, String input) {
         String[] inputArray = input.split(" ");
         Float tmp;
         if (!isNumeric(inputArray[1])) {
-            if ((tmp = parameters.get(inputArray[1])) == null)
+            tmp = parameters.get(inputArray[1]);
+            if (tmp == null) {
                 System.out.println("there is no key like this");
-            else System.out.println("ok");
+            } //else System.out.println("ok");
         } else
             tmp = Float.valueOf(inputArray[1]);
         numbersStack.push(tmp);
     }
 
-    public float POP(Stack<Float> numbersStack, Map<String, Float> parameters) {
+    public float POP(Stack<Float> numbersStack, HashMap<String, Float> parameters) {
         float outputNumber = numbersStack.pop();
         return outputNumber;
     }
 
-    public int PRINT(Stack<Float> numbersStack, Map<String, Float> parameters) {
+    public int PRINT(Stack<Float> numbersStack, HashMap<String, Float> parameters) {
         //float outputNumber = numbersStack.peek();
         if (!numbersStack.isEmpty()) System.out.println(numbersStack.peek());
         else System.out.println("nothing...");
