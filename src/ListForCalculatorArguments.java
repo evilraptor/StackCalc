@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Stack;
 
-public class ListForCalculatorOperation {
+public class ListForCalculatorArguments {
     private Stack<Float> numbersStack;
     private HashMap<String, Float> parameters;
     private String text;

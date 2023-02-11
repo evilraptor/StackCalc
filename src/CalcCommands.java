@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Stack;
 
-public class CalcOperations {
+public class CalcCommands {
     public static boolean isNumeric(String str) {
         try {
             Float.parseFloat(str);
@@ -11,12 +11,11 @@ public class CalcOperations {
         }
     }
 
-    //ListForCalculatorOperation listForCalculatorOperation
     //Stack<Float> numbersStack, HashMap<String, Float> parameters, String input
-    public void DEFINE(ListForCalculatorOperation listForCalculatorOperation) {
-        Stack<Float> numbersStack = listForCalculatorOperation.getStack();
-        HashMap<String, Float> parameters = listForCalculatorOperation.getParameters();
-        String input = listForCalculatorOperation.getText();
+    public void DEFINE(ListForCalculatorArguments listForCalculatorArguments) {
+        Stack<Float> numbersStack = listForCalculatorArguments.getStack();
+        HashMap<String, Float> parameters = listForCalculatorArguments.getParameters();
+        String input = listForCalculatorArguments.getText();
 
         String[] inputArray = input.split(" ");
         String inputParameter = inputArray[1];
@@ -25,10 +24,10 @@ public class CalcOperations {
     }
 
     //Stack<Float> numbersStack, HashMap<String, Float> parameters, String input
-    public void PUSH(ListForCalculatorOperation listForCalculatorOperation) {
-        Stack<Float> numbersStack = listForCalculatorOperation.getStack();
-        HashMap<String, Float> parameters = listForCalculatorOperation.getParameters();
-        String input = listForCalculatorOperation.getText();
+    public void PUSH(ListForCalculatorArguments listForCalculatorArguments) {
+        Stack<Float> numbersStack = listForCalculatorArguments.getStack();
+        HashMap<String, Float> parameters = listForCalculatorArguments.getParameters();
+        String input = listForCalculatorArguments.getText();
 
         String[] inputArray = input.split(" ");
         Float tmp;
@@ -43,9 +42,9 @@ public class CalcOperations {
     }
 
     //Stack<Float> numbersStack, HashMap<String, Float> parameters
-    public void POP(ListForCalculatorOperation listForCalculatorOperation) {
-        Stack<Float> numbersStack = listForCalculatorOperation.getStack();
-        HashMap<String, Float> parameters = listForCalculatorOperation.getParameters();
+    public void POP(ListForCalculatorArguments listForCalculatorArguments) {
+        Stack<Float> numbersStack = listForCalculatorArguments.getStack();
+        HashMap<String, Float> parameters = listForCalculatorArguments.getParameters();
 
         float outputNumber;
         System.out.println("POP result: ");
@@ -57,9 +56,9 @@ public class CalcOperations {
     }
 
     //Stack<Float> numbersStack, HashMap<String, Float> parameters
-    public void PRINT(ListForCalculatorOperation listForCalculatorOperation) {
-        Stack<Float> numbersStack = listForCalculatorOperation.getStack();
-        HashMap<String, Float> parameters = listForCalculatorOperation.getParameters();
+    public void PRINT(ListForCalculatorArguments listForCalculatorArguments) {
+        Stack<Float> numbersStack = listForCalculatorArguments.getStack();
+        HashMap<String, Float> parameters = listForCalculatorArguments.getParameters();
 
         System.out.println("PRINT result: ");
         if (!numbersStack.isEmpty()) {
