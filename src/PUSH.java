@@ -11,7 +11,7 @@ public class PUSH implements ICalcCommand {
 
         String[] inputArray = input.split(" ");
         Float tmp;
-        if (!CalcCommands.isNumeric(inputArray[1])) {
+        if (!StackCalculator.isNumeric(inputArray[1])) {
             tmp = parameters.get(inputArray[1]);
             if (tmp == null) {
                 System.out.println("there is no key like this");
