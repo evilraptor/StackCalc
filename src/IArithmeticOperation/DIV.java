@@ -5,7 +5,7 @@ import InputOperators.ListForCalculatorArguments;
 import java.util.Stack;
 
 public class DIV implements IArithmeticOperation {
-    String name = "IArithmeticOperation.DIV";
+    private final String name = "IArithmeticOperation.DIV";
 
     @Override
     public String getName() {

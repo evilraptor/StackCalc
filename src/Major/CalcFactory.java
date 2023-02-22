@@ -12,8 +12,8 @@ import IArithmeticOperation.SQRT;
 import java.util.HashMap;
 
 public class CalcFactory implements AbstractCalcFactory {
-    HashMap<String, ICalcCommand> calcCommands = new HashMap<>();
-    HashMap<String, IArithmeticOperation> arithmeticOperations = new HashMap<>();
+    private HashMap<String, ICalcCommand> calcCommands = new HashMap<>();
+    private HashMap<String, IArithmeticOperation> arithmeticOperations = new HashMap<>();
 
     CalcFactory() {
         ICalcCommand define = new DEFINE();

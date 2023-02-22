@@ -15,10 +15,10 @@ public class StackCalculator {
         }
     }
 
-    Stack<Float> numbersStack = new Stack<>();
-    HashMap<String, Float> parameters = new HashMap<>();
-    ListForCalculatorArguments listForCalculatorArguments = new ListForCalculatorArguments();
-    CalcFactory calcFactory = new CalcFactory();
+    private Stack<Float> numbersStack = new Stack<>();
+    private HashMap<String, Float> parameters = new HashMap<>();
+    private ListForCalculatorArguments listForCalculatorArguments = new ListForCalculatorArguments();
+    private CalcFactory calcFactory = new CalcFactory();
 
     void doCalculation(String input) {
         listForCalculatorArguments.add(numbersStack, parameters, input);

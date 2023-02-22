@@ -1,12 +1,11 @@
 package IArithmeticOperation;
 
-import IArithmeticOperation.IArithmeticOperation;
 import InputOperators.ListForCalculatorArguments;
 
 import java.util.Stack;
 
 public class SQRT implements IArithmeticOperation {
-    String name = "IArithmeticOperation.SQRT";
+    private final String name = "IArithmeticOperation.SQRT";
 
     @Override
     public String getName() {

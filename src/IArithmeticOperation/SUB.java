@@ -1,12 +1,11 @@
 package IArithmeticOperation;
 
-import IArithmeticOperation.IArithmeticOperation;
 import InputOperators.ListForCalculatorArguments;
 
 import java.util.Stack;
 
 public class SUB implements IArithmeticOperation {
-    String name = "IArithmeticOperation.SUB";
+    private final String name = "IArithmeticOperation.SUB";
 
     @Override
     public String getName() {

@@ -5,7 +5,7 @@ import InputOperators.ListForCalculatorArguments;
 import java.util.HashMap;
 
 public class DEFINE implements ICalcCommand {
-    String name = "ICalcCommand.ICalcCommand.DEFINE";
+    private final String name = "ICalcCommand.ICalcCommand.DEFINE";
 
     @Override
     public String getName() {

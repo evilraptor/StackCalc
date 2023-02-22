@@ -5,7 +5,7 @@ import InputOperators.ListForCalculatorArguments;
 import java.util.Stack;
 
 public class POP implements ICalcCommand {
-    String name = "ICalcCommand.ICalcCommand.POP";
+    private final String name = "ICalcCommand.ICalcCommand.POP";
 
     @Override
     public String getName() {

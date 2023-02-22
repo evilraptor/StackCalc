@@ -5,7 +5,7 @@ import InputOperators.ListForCalculatorArguments;
 import java.util.Stack;
 
 public class ADD implements IArithmeticOperation {
-    String name = "IArithmeticOperation.IArithmeticOperation.ADD";
+    private final String name = "IArithmeticOperation.IArithmeticOperation.ADD";
 
     @Override
     public String getName() {

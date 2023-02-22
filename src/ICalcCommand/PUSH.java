@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Stack;
 
 public class PUSH implements ICalcCommand {
-    String name = "ICalcCommand.ICalcCommand.PUSH";
+    private final String name = "ICalcCommand.ICalcCommand.PUSH";
 
     @Override
     public String getName() {

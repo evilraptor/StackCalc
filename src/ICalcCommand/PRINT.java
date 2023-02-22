@@ -5,7 +5,7 @@ import InputOperators.ListForCalculatorArguments;
 import java.util.Stack;
 
 public class PRINT implements ICalcCommand {
-    String name = "ICalcCommand.ICalcCommand.PRINT";
+    private final String name = "ICalcCommand.ICalcCommand.PRINT";
 
     @Override
     public String getName() {
