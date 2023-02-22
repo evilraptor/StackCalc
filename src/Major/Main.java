@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public final class Main {
     public static void main(String[] args) {
-        //System.out.println(args[0]);
+        //нет аргументов программы
         StackCalculator stackCalculator = new StackCalculator();
         if (args.length == 0) {
             System.out.println("(no args in the input)");
@@ -22,6 +22,7 @@ public final class Main {
             }
             in.close();
         } else {
+            //есть аргументы программы
             FileInputStream fileInputStream = null;
             try {
                 fileInputStream = new FileInputStream(args[0]);
@@ -29,24 +30,22 @@ public final class Main {
                 System.out.println(e.getMessage());
             }
             int i;
-            String inputFromTxt = "";
+            StringBuilder inputFromTxt = new StringBuilder();
             try {
                 int counter = 0;
                 while ((i = fileInputStream.read()) != -1) {
                     //13-\r 10-\n EOF вернет -1
-                    char buf = (char) i;
 
-                    if (i != 10) inputFromTxt = inputFromTxt + (char) i;
-                    //System.out.print((char) i);
-                    if ((i == 10) || (i == 0)) {
+                    if (i != 10) inputFromTxt.append((char) i);
+                    else {//(i == 10)
                         System.out.println(counter + ":   " + inputFromTxt);
-                        stackCalculator.doCalculation(inputFromTxt);
-                        inputFromTxt = "";
+                        stackCalculator.doCalculation(inputFromTxt.toString());
+                        inputFromTxt = new StringBuilder();
                         counter++;
                     }
                 }
                 System.out.println(counter + ":   " + inputFromTxt);
-                stackCalculator.doCalculation(inputFromTxt);
+                stackCalculator.doCalculation(inputFromTxt.toString());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
