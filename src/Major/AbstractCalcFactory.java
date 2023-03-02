@@ -1,16 +1,12 @@
 package Major;
 
-import IArithmeticOperation.IArithmeticOperation;
-import ICalcCommand.ICalcCommand;
 import InputOperators.ListForCalculatorArguments;
-
-import java.util.HashMap;
 
 public interface AbstractCalcFactory {
 
-    void addCalcCommands(String commandName, ICalcCommand inputCalcCommand);
+    void addCalcCommands(String commandName, ICalcInteract inputCalcCommand);
 
-    void addArithmeticOperations(String operationName, IArithmeticOperation inputArithmeticOperation);
+    void addArithmeticOperations(String operationName, ICalcInteract inputArithmeticOperation);
 
     void doCalcCommand(ListForCalculatorArguments listForCalculatorArguments);
 

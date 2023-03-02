@@ -1,59 +1,54 @@
 package Major;
 
-import IArithmeticOperation.IArithmeticOperation;
-import ICalcCommand.*;
+import CalcCommand.*;
 import InputOperators.ListForCalculatorArguments;
-import IArithmeticOperation.ADD;
-import IArithmeticOperation.SUB;
-import IArithmeticOperation.MUL;
-import IArithmeticOperation.DIV;
-import IArithmeticOperation.SQRT;
+import ArithmeticOperation.*;
 
 import java.util.HashMap;
 
 public class CalcFactory implements AbstractCalcFactory {
-    private HashMap<String, ICalcCommand> calcCommands = new HashMap<>();
-    private HashMap<String, IArithmeticOperation> arithmeticOperations = new HashMap<>();
+    private HashMap<String, ICalcInteract> calcCommands = new HashMap<>();
+    private HashMap<String, ICalcInteract> arithmeticOperations = new HashMap<>();
 
     CalcFactory() {
-        ICalcCommand define = new DEFINE();
+        ICalcInteract define = new DEFINE();
         addCalcCommands("DEFINE", define);
-        ICalcCommand print = new PRINT();
+        ICalcInteract print = new PRINT();
         addCalcCommands("PRINT", print);
-        ICalcCommand pop = new POP();
+        ICalcInteract pop = new POP();
         addCalcCommands("POP", pop);
-        ICalcCommand push = new PUSH();
+        ICalcInteract push = new PUSH();
         addCalcCommands("PUSH", push);
 
-        IArithmeticOperation add = new ADD();
+        ICalcInteract add = new ADD();
         addArithmeticOperations("+", add);
-        IArithmeticOperation sub = new SUB();
+        ICalcInteract sub = new SUB();
         addArithmeticOperations("-", sub);
-        IArithmeticOperation mul = new MUL();
+        ICalcInteract mul = new MUL();
         addArithmeticOperations("*", mul);
-        IArithmeticOperation div = new DIV();
+        ICalcInteract div = new DIV();
         addArithmeticOperations("/", div);
-        IArithmeticOperation sqrt = new SQRT();
+        ICalcInteract sqrt = new SQRT();
         addArithmeticOperations("SQRT", sqrt);
     }
 
     @Override
-    public void addCalcCommands(String commandName, ICalcCommand inputCalcCommand) {
+    public void addCalcCommands(String commandName, ICalcInteract inputCalcCommand) {
         calcCommands.put(commandName, inputCalcCommand);
     }
 
     @Override
-    public void addArithmeticOperations(String operationName, IArithmeticOperation inputArithmeticOperation) {
+    public void addArithmeticOperations(String operationName, ICalcInteract inputArithmeticOperation) {
         arithmeticOperations.put(operationName, inputArithmeticOperation);
     }
 
     @Override
     public void doCalcCommand(ListForCalculatorArguments listForCalculatorArguments) {
         String[] inputArray = listForCalculatorArguments.getText().split(" ");
-        ICalcCommand outputCalcCommand = calcCommands.get(inputArray[0]);
+        ICalcInteract outputCalcCommand = calcCommands.get(inputArray[0]);
         outputCalcCommand.getResult(listForCalculatorArguments);
 
-        outputCalcCommand.getName();
+        //outputCalcCommand.getName();
         //new <ICalcCommand.ICalcCommand>;
     }
 
@@ -61,7 +56,7 @@ public class CalcFactory implements AbstractCalcFactory {
     public void doArithmeticOperation(ListForCalculatorArguments listForCalculatorArguments) {
         //IArithmeticOperation.IArithmeticOperation a = arithmeticOperations.get("+");
         String[] inputArray = listForCalculatorArguments.getText().split(" ");
-        IArithmeticOperation outputArithmeticOperation = arithmeticOperations.get(inputArray[0]);
+        ICalcInteract outputArithmeticOperation = arithmeticOperations.get(inputArray[0]);
         outputArithmeticOperation.getResult(listForCalculatorArguments);
     }
 

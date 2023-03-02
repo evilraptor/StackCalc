@@ -1,16 +1,12 @@
-package ICalcCommand;
+package CalcCommand;
 
 import InputOperators.ListForCalculatorArguments;
+import Major.ICalcInteract;
 
 import java.util.Stack;
 
-public class PRINT implements ICalcCommand {
+public class PRINT implements ICalcInteract {
     private final String name = "ICalcCommand.ICalcCommand.PRINT";
-
-    @Override
-    public String getName() {
-        return name;
-    }
 
     @Override
     public void getResult(ListForCalculatorArguments listForCalculatorArguments) {

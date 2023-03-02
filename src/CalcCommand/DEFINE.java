@@ -1,16 +1,12 @@
-package ICalcCommand;
+package CalcCommand;
 
 import InputOperators.ListForCalculatorArguments;
+import Major.ICalcInteract;
 
 import java.util.HashMap;
 
-public class DEFINE implements ICalcCommand {
+public class DEFINE implements ICalcInteract {
     private final String name = "ICalcCommand.ICalcCommand.DEFINE";
-
-    @Override
-    public String getName() {
-        return name;
-    }
 
     @Override
     public void getResult(ListForCalculatorArguments listForCalculatorArguments) {

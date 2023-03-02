@@ -1,18 +1,14 @@
-package ICalcCommand;
+package CalcCommand;
 
 import InputOperators.ListForCalculatorArguments;
+import Major.ICalcInteract;
 import Major.StackCalculator;
 
 import java.util.HashMap;
 import java.util.Stack;
 
-public class PUSH implements ICalcCommand {
+public class PUSH implements ICalcInteract {
     private final String name = "ICalcCommand.ICalcCommand.PUSH";
-
-    @Override
-    public String getName() {
-        return name;
-    }
 
     @Override
     public void getResult(ListForCalculatorArguments listForCalculatorArguments) {

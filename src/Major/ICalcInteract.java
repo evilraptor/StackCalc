@@ -1,9 +1,7 @@
-package ICalcCommand;
+package Major;
 
 import InputOperators.ListForCalculatorArguments;
 
-public interface ICalcCommand {
-    String getName();
-
+public interface ICalcInteract {
     void getResult(ListForCalculatorArguments listForCalculatorArguments);
 }
