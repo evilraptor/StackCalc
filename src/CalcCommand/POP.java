@@ -5,7 +5,7 @@ import Major.ICalcInteract;
 
 import java.util.Stack;
 
-public class POP implements ICalcInteract {
+public final class POP implements ICalcInteract {
     private final String name = "ICalcCommand.ICalcCommand.POP";
 
     @Override

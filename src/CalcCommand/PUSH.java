@@ -7,7 +7,7 @@ import Major.StackCalculator;
 import java.util.HashMap;
 import java.util.Stack;
 
-public class PUSH implements ICalcInteract {
+public final class PUSH implements ICalcInteract {
     private final String name = "ICalcCommand.ICalcCommand.PUSH";
 
     @Override

@@ -5,7 +5,7 @@ import Major.ICalcInteract;
 
 import java.util.Stack;
 
-public class MUL implements ICalcInteract {
+public final class MUL implements ICalcInteract {
     private final String name = "IArithmeticOperation.MUL";
 
     @Override

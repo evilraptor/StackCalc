@@ -2,6 +2,8 @@ package Major;
 
 import InputOperators.ListForCalculatorArguments;
 
-public interface ICalcInteract {
+import java.io.Serializable;
+
+public interface ICalcInteract extends Serializable {
     void getResult(ListForCalculatorArguments listForCalculatorArguments);
 }

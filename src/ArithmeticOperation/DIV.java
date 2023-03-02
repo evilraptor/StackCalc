@@ -5,7 +5,7 @@ import Major.ICalcInteract;
 
 import java.util.Stack;
 
-public class DIV implements ICalcInteract {
+public final class DIV implements ICalcInteract {
     private final String name = "IArithmeticOperation.DIV";
 
     @Override

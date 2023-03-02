@@ -5,7 +5,7 @@ import Major.ICalcInteract;
 
 import java.util.HashMap;
 
-public class DEFINE implements ICalcInteract {
+public final class DEFINE implements ICalcInteract {
     private final String name = "ICalcCommand.ICalcCommand.DEFINE";
 
     @Override

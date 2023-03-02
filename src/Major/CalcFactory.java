@@ -61,7 +61,7 @@ public class CalcFactory implements AbstractCalcFactory {
     }
 
     @Override
-    public void doCalc(ListForCalculatorArguments listForCalculatorArguments) {
+    public void doCalculation(ListForCalculatorArguments listForCalculatorArguments) {
         String[] inputArray = listForCalculatorArguments.getText().split(" ");
         if (calcCommands.containsKey(inputArray[0])) doCalcCommand(listForCalculatorArguments);
         else if (arithmeticOperations.containsKey(inputArray[0]))

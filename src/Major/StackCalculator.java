@@ -22,7 +22,7 @@ public class StackCalculator {
 
     void doCalculation(String input) {
         listForCalculatorArguments.add(numbersStack, parameters, input);
-        calcFactory.doCalc(listForCalculatorArguments);
+        calcFactory.doCalculation(listForCalculatorArguments);
 
     }
 }

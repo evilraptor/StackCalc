@@ -5,7 +5,7 @@ import Major.ICalcInteract;
 
 import java.util.Stack;
 
-public class SQRT implements ICalcInteract {
+public final class SQRT implements ICalcInteract {
     private final String name = "IArithmeticOperation.SQRT";
 
     @Override

@@ -2,6 +2,6 @@ package Factory;
 
 import Major.ICalcInteract;
 
-public interface ICreator {
+public interface ICalcInteractCreator {
     ICalcInteract creatorCalcInteract(ICalcInteract type);
 }

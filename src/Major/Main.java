@@ -1,5 +1,8 @@
 package Major;
 
+import CalcCommand.*;
+import Factory.*;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -7,6 +10,13 @@ import java.util.Scanner;
 
 public final class Main {
     public static void main(String[] args) {
+        /*ICalcInteract push = new PUSH();
+        ICalcInteract pop = new POP();
+        ConcreteCalcInteractCreator concreteCalcInteractCreator = new ConcreteCalcInteractCreator();
+        ICalcInteract tmp1 = concreteCalcInteractCreator.creatorCalcInteract(push);
+        ICalcInteract tmp2 = concreteCalcInteractCreator.creatorCalcInteract(pop);*/
+
+
         //нет аргументов программы
         StackCalculator stackCalculator = new StackCalculator();
         if (args.length == 0) {

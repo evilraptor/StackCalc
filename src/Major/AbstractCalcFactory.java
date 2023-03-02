@@ -12,5 +12,5 @@ public interface AbstractCalcFactory {
 
     void doArithmeticOperation(ListForCalculatorArguments listForCalculatorArguments);
 
-    void doCalc(ListForCalculatorArguments listForCalculatorArguments);
+    void doCalculation(ListForCalculatorArguments listForCalculatorArguments);
 }

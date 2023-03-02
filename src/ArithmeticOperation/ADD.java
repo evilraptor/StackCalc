@@ -5,7 +5,7 @@ import Major.ICalcInteract;
 
 import java.util.Stack;
 
-public class ADD implements ICalcInteract {
+public final class ADD implements ICalcInteract {
     private final String name = "IArithmeticOperation.IArithmeticOperation.ADD";
 
     @Override

@@ -5,7 +5,7 @@ import Major.ICalcInteract;
 
 import java.util.Stack;
 
-public class PRINT implements ICalcInteract {
+public final class PRINT implements ICalcInteract {
     private final String name = "ICalcCommand.ICalcCommand.PRINT";
 
     @Override
