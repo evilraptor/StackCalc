@@ -1,7 +1,7 @@
 package Factory;
 
-import Major.ICalcInteract;
+import CalcInteract.ICalcInteract;
 
 public interface ICalcInteractCreator {
-    ICalcInteract creatorCalcInteract(ICalcInteract type);
+    public ICalcInteract create(String id);
 }

@@ -1,7 +1,6 @@
-package CalcCommand;
+package CalcInteract;
 
 import InputOperators.ListForCalculatorArguments;
-import Major.ICalcInteract;
 
 import java.util.HashMap;
 

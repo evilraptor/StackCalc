@@ -1,5 +1,6 @@
 package Major;
 
+import CalcInteract.ICalcInteract;
 import InputOperators.ListForCalculatorArguments;
 
 public interface AbstractCalcFactory {

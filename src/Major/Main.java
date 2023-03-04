@@ -1,6 +1,6 @@
 package Major;
 
-import CalcCommand.*;
+import CalcInteract.*;
 import Factory.*;
 
 import java.io.FileInputStream;
@@ -14,8 +14,11 @@ public final class Main {
         ICalcInteract pop = new POP();
         ConcreteCalcInteractCreator concreteCalcInteractCreator = new ConcreteCalcInteractCreator();
         ICalcInteract tmp1 = concreteCalcInteractCreator.creatorCalcInteract(push);
-        ICalcInteract tmp2 = concreteCalcInteractCreator.creatorCalcInteract(pop);*/
-
+        ICalcInteract tmp2 = concreteCalcInteractCreator.creatorCalcInteract(pop);
+        /////////////////////////////////
+        CalcFactory1 calcFactory1 = new CalcFactory1();
+        ICalcInteract a = calcFactory1.create("CalcInteract.DEFINE");
+        int b = 5;*/
 
         //нет аргументов программы
         StackCalculator stackCalculator = new StackCalculator();
@@ -27,7 +30,7 @@ public final class Main {
             while (!input.equals("EXIT")) {
                 System.out.print(counter + ":   ");
                 input = in.nextLine();
-                stackCalculator.doCalculation(input);
+                stackCalculator.doCalculationWithReflection(input);
                 counter++;
             }
             in.close();

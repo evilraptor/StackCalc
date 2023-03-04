@@ -1,8 +1,7 @@
 package Major;
 
-import CalcCommand.*;
+import CalcInteract.*;
 import InputOperators.ListForCalculatorArguments;
-import ArithmeticOperation.*;
 
 import java.util.HashMap;
 

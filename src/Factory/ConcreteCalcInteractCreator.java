@@ -1,20 +1,17 @@
 package Factory;
 
-import InputOperators.ListForCalculatorArguments;
-import Major.ICalcInteract;
+import CalcInteract.*;
 
 public class ConcreteCalcInteractCreator implements ICalcInteractCreator {
-
     @Override
-    public ICalcInteract creatorCalcInteract(ICalcInteract type) {
-        return new ICalcInteract() {
-            @Override
-            public void getResult(ListForCalculatorArguments listForCalculatorArguments) {
-                type.getResult(listForCalculatorArguments);
+    public ICalcInteract create(String name) {
+        ICalcInteract calcInteract = null;
 
-            }
-        };
-        //return new ;
-
+        try {
+            calcInteract = (ICalcInteract) Class.forName(name).newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return calcInteract;
     }
 }
