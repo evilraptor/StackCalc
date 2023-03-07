@@ -1,7 +1,6 @@
 package Factory;
 
 import CalcInteract.*;
-import CalcInteract.ICalcInteract;
 
 import java.util.HashMap;
 
@@ -20,16 +19,7 @@ public class CalcFactoryWithReflection implements AbstractCalcFactoryWithReflect
         ICalcInteract sqrt = new SQRT();
     }
 
-    private HashMap<String, ICalcInteractCreator> calcInteractCreators = new HashMap<>();
-    //private ConcreteCalcInteractCreator concreteCalcInteractCreator = new ConcreteCalcInteractCreator();
-
-    /*@Override
-    public void addCalcCommands(String name) {
-        if(calcInteractCreators.get(name)==null){
-            ConcreteCalcInteractCreator concreteCalcInteractCreator=new ConcreteCalcInteractCreator();
-            calcInteractCreators.put(name,concreteCalcInteractCreator.create(name));
-        }
-    }*/
+    //private HashMap<String, ICalcInteractCreator> calcInteractCreators = new HashMap<>();
 
     @Override
     public ICalcInteract create(String name) {
